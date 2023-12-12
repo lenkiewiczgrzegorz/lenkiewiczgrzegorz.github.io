@@ -1,9 +1,16 @@
-<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
-
-<body style='margin : 0px; overflow: hidden;'>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin : 0px; overflow: hidden;">
 <a-scene embedded arjs>
+    <!-- Dodaj marker, np. hiro -->
     <a-marker preset="hiro">
+        <!-- Dodaj model 3D z a-drag-droppable -->
         <a-entity
                 gltf-model="url(modern_table.glb)"
                 scale="0.05 0.05 0.05"
@@ -11,6 +18,8 @@
                 a-drag-droppable
         ></a-entity>
     </a-marker>
+    <!-- Dodaj kamery -->
     <a-entity camera></a-entity>
 </a-scene>
 </body>
+</html>
