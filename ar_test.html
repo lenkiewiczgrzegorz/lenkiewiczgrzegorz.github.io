@@ -29,22 +29,16 @@
 <div class="arjs-loader">
     <div>Loading, please wait...</div>
 </div>
-<a-scene
-        vr-mode-ui="enabled: false;"
-        renderer="logarithmicDepthBuffer: true;"
-        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
-
-    <!-- use rawgithack to retrieve the correct url for nft marker (see 'trex' below) -->
-    <a-nft
-            type='nft' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex'
-            smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+<a-scene embedded arjs>
+    <!-- Dodaj marker, np. hiro -->
+    <a-marker preset="hiro">
+        <!-- Dodaj model 3D -->
         <a-entity
-                gltf-model='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf'
-                scale="5 5 5"
-                position="100 100 0"
-        >
-        </a-entity>
-    </a-nft>
+                gltf-model="url(modern_table.glb)"
+                scale="0.05 0.05 0.05"
+        ></a-entity>
+    </a-marker>
+    <!-- Dodaj kamery -->
     <a-entity camera></a-entity>
 </a-scene>
 </body>
